@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ThfModule } from '@totvs/thf-ui';
+import { RouterModule } from '@angular/router';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThfKendoModule } from '@totvs/thf-kendo';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +16,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ThfModule,
+    ThfKendoModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
