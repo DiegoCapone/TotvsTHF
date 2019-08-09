@@ -91,24 +91,33 @@ export class AppComponent {
     console.log(this.selectedItem.Ordem);
     console.log(this.selectedItem.Decisao);
 
+
+    if ( decisao === '' ) {
+      alert('Número de desição não pode ser em branco');
+      return this.selectedItem.Validacao = 'X';
+    }
+
+    if ( decisao.length !== 10 ) {
+      alert('Número de desição invalido');
+      return this.selectedItem.Validacao = 'X';
+    }
+
     const resp = this.appService.postPedidos(ordem, decisao).subscribe((res: any) => {
-      console.log(res.Status);
-      res.Status = 'OK' ? this.save = true : this.save = false;
-      console.log(this.save);
+      console.log(res);
+      res.Status === 'OK' ?  this.selectedItem.Validacao = 'V' : this.selectedItem.Validacao = 'X';
     }, error => {
-      this.save = false ;
-      console.log(this.save);
+      // this.save = false ;
+      // console.log(this.save);
     });
 
   }
 
-  onSave(event) {
-    return this.save;
-  }
+  // onSave(event) {
+  //   return this.save;
+  // }
 
   onSubmit() {
-    const tr = document.getElementsByTagName('TR');
-    console.log(tr);
+    console.log('teste');
   }
 
   private onClick() {

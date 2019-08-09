@@ -11,18 +11,11 @@
                     t-editable="true"
                     t-selectable="true"
                     (t-save-value)="onEditable($event)"
-                    t-save-action="onSave"
                     (t-selection-change)="onSelectionChange($event)"
                   >
                   </thf-kendo-grid>
                   
                   <div class=" thf-m-3">
-                      <thf-button
-                      t-label="Voltar"
-                      (t-click)="onSubmit()"
-                      >
-                    </thf-button>
-                
                     <thf-button
                       t-label="Enviar Para Aprovação"
                       (t-click)="onSubmit()"

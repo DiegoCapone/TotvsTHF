@@ -8,10 +8,6 @@ import { Observable } from 'rxjs';
 export class AppService {
 
   constructor(private http: HttpClient) { }
-  // tslint:disable-next-line: max-line-length
-  url = '/api/dts/datasul-rest/resources/login?username=super&password=hFG6ihTXl1PTTLM7UbpGtLAl64E%3D';
-  // tslint:disable-next-line: ban-types
-
 
   getToken(): Observable<any> {
     console.log('metodo pesquisa foi chamado');
@@ -22,6 +18,7 @@ export class AppService {
   }
 
   getPedidos(): Observable<any> {
+    console.log('methodo getPedidos foi chamado')
     return this.http.get('http://localhost:4200/api/dts/datasul-rest/resources/prg/mla/v1/decisao');
   }
 
